@@ -50,10 +50,9 @@ export default {
   created() {
     this.sdk = new MetaMaskSDK({
       dappMetadata: {
-        url: window.location.href,
+        url: window.location.host,
         name: 'MetaMask VueJS Example Dapp',
       },
-      communicationServerUrl: 'https://metamask-sdk-socket.metafi.codefi.network/',
       checkInstallationImmediately: false,
       logging: {
         developerMode: false,
@@ -61,6 +60,7 @@ export default {
       i18nOptions: {
         enabled: true,
       },
+      useDeeplink: true
     });
   },
   async mounted() {
